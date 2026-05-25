@@ -17,4 +17,9 @@ function connectToDB1() {
     }
     return $link;
 }
+
+// Wrapper to support legacy Jambongan files that call connectToDB()
+function connectToDB() {
+    return connectToDB1();
+}
 ?>

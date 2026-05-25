@@ -4,7 +4,7 @@
 <InstallDate>29-Oct-2025</InstallDate>
 <Datetime_MBMS1>07-May-2026 14:35:18</Datetime_MBMS1>
 <Datetime_HVB1>07-May-2026 14:35:18</Datetime_HVB1>
-<HVB1_Control_Status>Ready</HVB1_Control_Status>
+<HVB1_Control_Status>online</HVB1_Control_Status>
 <HVB1_state>Normal</HVB1_state>
 <HVB1_N_ComOK>OK</HVB1_N_ComOK>
 <HVB1_N_Connect>Connected</HVB1_N_Connect>

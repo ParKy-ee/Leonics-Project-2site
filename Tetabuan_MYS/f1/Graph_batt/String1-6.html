@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Battery</title>
+		<title>Department of Water Resource</title>
 
 <script type="text/javascript" src="../../../highchart/js/loadxmldoc.js"></script>
 <script type="text/javascript">
@@ -21,7 +21,7 @@ document.getElementById('update').click();
 var currentdate = new Date();
 var datetime =currentdate.getHours() ;
 //alert (datetime);
-	xmlDoc=loadXMLDoc("../xml2/Main.xml");
+	xmlDoc=loadXMLDoc("../xml/Battery.xml");
 	var DateServer= new String();
 	var TimeServer= new String();
 	var DateServer=xmlDoc.getElementsByTagName("DateServer")[0].childNodes[0].nodeValue;
@@ -33,69 +33,53 @@ var datetime =currentdate.getHours() ;
 	var AVG=Number(xmlDoc.getElementsByTagName("HVB1_Avg_cV")[0].childNodes[0].nodeValue);
 	
 	var S1_V1=new Number();
-	var S1_V1=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV1")[0].childNodes[0].nodeValue);
+	var S1_V1=Number(xmlDoc.getElementsByTagName("HVB1_Batt13_cV9")[0].childNodes[0].nodeValue);
 	var S1_V2=new Number();
-	var S1_V2=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV2")[0].childNodes[0].nodeValue);
+	var S1_V2=Number(xmlDoc.getElementsByTagName("HVB1_Batt13_cV10")[0].childNodes[0].nodeValue);
 	var S1_V3=new Number();
-	var S1_V3=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV3")[0].childNodes[0].nodeValue);
+	var S1_V3=Number(xmlDoc.getElementsByTagName("HVB1_Batt13_cV11")[0].childNodes[0].nodeValue);
 	var S1_V4=new Number();
-	var S1_V4=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV4")[0].childNodes[0].nodeValue);
+	var S1_V4=Number(xmlDoc.getElementsByTagName("HVB1_Batt13_cV12")[0].childNodes[0].nodeValue);
 	var S1_V5=new Number();
-	var S1_V5=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV5")[0].childNodes[0].nodeValue);
+	var S1_V5=Number(xmlDoc.getElementsByTagName("HVB1_Batt13_cV13")[0].childNodes[0].nodeValue);
 	var S1_V6=new Number();
-	var S1_V6=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV6")[0].childNodes[0].nodeValue);
+	var S1_V6=Number(xmlDoc.getElementsByTagName("HVB1_Batt13_cV14")[0].childNodes[0].nodeValue);
 	var S1_V7=new Number();
-	var S1_V7=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV7")[0].childNodes[0].nodeValue);
+	var S1_V7=Number(xmlDoc.getElementsByTagName("HVB1_Batt13_cV15")[0].childNodes[0].nodeValue);
 	var S1_V8=new Number();
-	var S1_V8=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV8")[0].childNodes[0].nodeValue);
+	var S1_V8=Number(xmlDoc.getElementsByTagName("HVB1_Batt13_cV16")[0].childNodes[0].nodeValue);
 	var S1_V9=new Number();
-	var S1_V9=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV9")[0].childNodes[0].nodeValue);	
+	var S1_V9=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV1")[0].childNodes[0].nodeValue);	
 	var S1_V10=new Number();
-	var S1_V10=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV10")[0].childNodes[0].nodeValue);
+	var S1_V10=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV2")[0].childNodes[0].nodeValue);
 	var S1_V11=new Number();
-	var S1_V11=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV11")[0].childNodes[0].nodeValue);
+	var S1_V11=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV3")[0].childNodes[0].nodeValue);
 	var S1_V12=new Number();
-	var S1_V12=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV12")[0].childNodes[0].nodeValue);
+	var S1_V12=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV4")[0].childNodes[0].nodeValue);
 	var S1_V13=new Number();
-	var S1_V13=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV13")[0].childNodes[0].nodeValue);
+	var S1_V13=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV5")[0].childNodes[0].nodeValue);
 	var S1_V14=new Number();
-	var S1_V14=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV14")[0].childNodes[0].nodeValue);
+	var S1_V14=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV6")[0].childNodes[0].nodeValue);
 	var S1_V15=new Number();
-	var S1_V15=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV15")[0].childNodes[0].nodeValue);
+	var S1_V15=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV7")[0].childNodes[0].nodeValue);
 	var S1_V16=new Number();
-	var S1_V16=Number(xmlDoc.getElementsByTagName("HVB1_Batt11_cV16")[0].childNodes[0].nodeValue);	
+	var S1_V16=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV8")[0].childNodes[0].nodeValue);	
 	var S1_V17=new Number();
-	var S1_V17=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV1")[0].childNodes[0].nodeValue);
+	var S1_V17=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV9")[0].childNodes[0].nodeValue);
 	var S1_V18=new Number();
-	var S1_V18=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV2")[0].childNodes[0].nodeValue);	
+	var S1_V18=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV10")[0].childNodes[0].nodeValue);	
 	var S1_V19=new Number();
-	var S1_V19=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV3")[0].childNodes[0].nodeValue);
+	var S1_V19=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV11")[0].childNodes[0].nodeValue);
 	var S1_V20=new Number();
-	var S1_V20=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV4")[0].childNodes[0].nodeValue);
+	var S1_V20=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV12")[0].childNodes[0].nodeValue);
 	var S1_V21=new Number();
-	var S1_V21=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV5")[0].childNodes[0].nodeValue);
+	var S1_V21=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV13")[0].childNodes[0].nodeValue);
 	var S1_V22=new Number();
-	var S1_V22=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV6")[0].childNodes[0].nodeValue);
+	var S1_V22=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV14")[0].childNodes[0].nodeValue);
 	var S1_V23=new Number();
-	var S1_V23=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV7")[0].childNodes[0].nodeValue);
+	var S1_V23=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV15")[0].childNodes[0].nodeValue);
 	var S1_V24=new Number();
-	var S1_V24=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV8")[0].childNodes[0].nodeValue);
-	var S1_V25=new Number();
-	var S1_V25=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV9")[0].childNodes[0].nodeValue);
-	var S1_V26=new Number();
-	var S1_V26=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV10")[0].childNodes[0].nodeValue);
-	var S1_V27=new Number();
-	var S1_V27=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV11")[0].childNodes[0].nodeValue);
-	var S1_V28=new Number();
-	var S1_V28=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV12")[0].childNodes[0].nodeValue);
-	var S1_V29=new Number();
-	var S1_V29=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV13")[0].childNodes[0].nodeValue);
-	var S1_V30=new Number();
-	var S1_V30=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV14")[0].childNodes[0].nodeValue);
-	var S1_V31=new Number();
-	var S1_V31=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV15")[0].childNodes[0].nodeValue);
-	var S1_V32=new Number();
-	var S1_V32=Number(xmlDoc.getElementsByTagName("HVB1_Batt12_cV16")[0].childNodes[0].nodeValue);
+	var S1_V24=Number(xmlDoc.getElementsByTagName("HVB1_Batt14_cV16")[0].childNodes[0].nodeValue);
 	var Color1=new String();
 if(S1_I>0){
 	 if(S1_V1<(AVG+0.06)){
@@ -336,87 +320,7 @@ if(S1_I>0){
 		var Color24='#f49471';
 	}else{
 		var Color24='#92d050';
-	}	
-	var Color25=new String();
-	 if(S1_V25<(AVG+0.06)){
-		var Color25='#92d050';
-	}else if((S1_V25>=(AVG+0.06)) &&(S1_V25<=(AVG+0.08))){
-		var Color25='#fed866';
-	}else if(S1_V25>(AVG+0.08)){
-		var Color25='#f49471';
-	}else{
-		var Color25='#92d050';
-	}	
-	var Color26=new String();
-	 if(S1_V26<(AVG+0.06)){
-		var Color26='#92d050';
-	}else if((S1_V26>=(AVG+0.06)) &&(S1_V26<=(AVG+0.08))){
-		var Color26='#fed866';
-	}else if(S1_V26>(AVG+0.08)){
-		var Color26='#f49471';
-	}else{
-		var Color26='#92d050';
-	}	
-	var Color=new String();
-	 if(S1_V27<(AVG+0.06)){
-		var Color27='#92d050';
-	}else if((S1_V27>=(AVG+0.06)) &&(S1_V27<=(AVG+0.08))){
-		var Color27='#fed866';
-	}else if(S1_V27>(AVG+0.08)){
-		var Color27='#f49471';
-	}else{
-		var Color27='#92d050';
-	}	
-	var Color28=new String();
-	 if(S1_V28<(AVG+0.06)){
-		var Color28='#92d050';
-	}else if((S1_V28>=(AVG+0.06)) &&(S1_V28<=(AVG+0.08))){
-		var Color28='#fed866';
-	}else if(S1_V28>(AVG+0.08)){
-		var Color28='#f49471';
-	}else{
-		var Color28='#92d050';
-	}	
-	var Color29=new String();
-	 if(S1_V29<(AVG+0.06)){
-		var Color29='#92d050';
-	}else if((S1_V29>=(AVG+0.06)) &&(S1_V29<=(AVG+0.08))){
-		var Color29='#fed866';
-	}else if(S1_V29>(AVG+0.08)){
-		var Color29='#f49471';
-	}else{
-		var Color29='#92d050';
-	}	
-	var Color30=new String();
-	 if(S1_V30<(AVG+0.06)){
-		var Color30='#92d050';
-	}else if((S1_V30>=(AVG+0.06)) &&(S1_V30<=(AVG+0.08))){
-		var Color30='#fed866';
-	}else if(S1_V30>(AVG+0.08)){
-		var Color30='#f49471';
-	}else{
-		var Color30='#92d050';
-	}	
-	var Color31=new String();
-	 if(S1_V31<(AVG+0.06)){
-		var Color31='#92d050';
-	}else if((S1_V31>=(AVG+0.06)) &&(S1_V31<=(AVG+0.08))){
-		var Color31='#fed866';
-	}else if(S1_V31>(AVG+0.08)){
-		var Color31='#f49471';
-	}else{
-		var Color31='#92d050';
-	}//-	
-	var Color32=new String();
-	 if(S1_V32<(AVG+0.06)){
-		var Color32='#92d050';
-	}else if((S1_V32>=(AVG+0.06)) &&(S1_V32<=(AVG+0.08))){
-		var Color32='#fed866';
-	}else if(S1_V32>(AVG+0.08)){
-		var Color32='#f49471';
-	}else{
-		var Color32='#92d050';
-	}//-	
+	}
 	
 }else{
 	if(S1_V1>(AVG-0.30)){
@@ -609,72 +513,7 @@ if(S1_I>0){
 		var Color24='#fed866';
 	}else if(S1_V24<(AVG-0.35)){
 		var Color24='#f49471';
-	}	
-	var Color25=new String();
-	 if(S1_V25>(AVG-0.30)){
-		var Color25='#92d050';
-	}else if((S1_V25<=(AVG-0.30)) &&(S1_V25>=(AVG-0.35))){
-		var Color25='#fed866';
-	}else if(S1_V25<(AVG-0.35)){
-		var Color25='#f49471';
-	}	
-	var Color26=new String();
-	 if(S1_V26>(AVG-0.30)){
-		var Color26='#92d050';
-	}else if((S1_V26<=(AVG-0.30)) &&(S1_V26>=(AVG-0.35))){
-		var Color26='#fed866';
-	}else if(S1_V26<(AVG-0.35)){
-		var Color26='#f49471';
-	}	
-	var Color=new String();
-	 if(S1_V27>(AVG-0.30)){
-		var Color27='#92d050';
-	}else if((S1_V27<=(AVG-0.30)) &&(S1_V27>=(AVG-0.35))){
-		var Color27='#fed866';
-	}else if(S1_V27<(AVG-0.35)){
-		var Color27='#f49471';
-	}	
-	var Color28=new String();
-	 if(S1_V28>(AVG-0.30)){
-		var Color28='#92d050';
-	}else if((S1_V28<=(AVG-0.30)) &&(S1_V28>=(AVG-0.35))){
-		var Color28='#fed866';
-	}else if(S1_V28<(AVG-0.35)){
-		var Color28='#f49471';
-	}	
-	var Color29=new String();
-	 if(S1_V29>(AVG-0.30)){
-		var Color29='#92d050';
-	}else if((S1_V29<=(AVG-0.30)) &&(S1_V29>=(AVG-0.35))){
-		var Color29='#fed866';
-	}else if(S1_V29<(AVG-0.35)){
-		var Color29='#f49471';
-	}	
-	var Color30=new String();
-	 if(S1_V30>(AVG-0.30)){
-		var Color30='#92d050';
-	}else if((S1_V30<=(AVG-0.30)) &&(S1_V30>=(AVG-0.35))){
-		var Color30='#fed866';
-	}else if(S1_V30<(AVG-0.35)){
-		var Color30='#f49471';
-	}	
-	var Color31=new String();
-	 if(S1_V31>(AVG-0.30)){
-		var Color31='#92d050';
-	}else if((S1_V31<=(AVG-0.30)) &&(S1_V31>=(AVG-0.35))){
-		var Color31='#fed866';
-	}else if(S1_V31<(AVG-0.35)){
-		var Color31='#f49471';
-	}//-
-	var Color32=new String();
-	 if(S1_V32>(AVG-0.30)){
-		var Color32='#92d050';
-	}else if((S1_V32<=(AVG-0.30)) &&(S1_V32>=(AVG-0.35))){
-		var Color32='#fed866';
-	}else if(S1_V32<(AVG-0.35)){
-		var Color32='#f49471';
-	}//-
-	
+	}
 }
 //////////-------------------------------------------------------	
 
@@ -686,7 +525,7 @@ $(document).ready(function() {
 			renderTo: 'container',
 			marginBottom: 30,
 			zoomType: 'xy',
-			height: 160,
+			height: 120,
 			borderWidth: 0,
 			borderColor: '#fff'
 			//defaultSeriesType: 'column'
@@ -699,26 +538,21 @@ $(document).ready(function() {
         enabled: false
     },
 		title: {
-			text: 'H1-B11,12',
+			text: '',
 			style: {
 				fontFamily: 'Arial, Helvetica, sans-serif',
 				fontWeight: 'normal',
-				fontSize: '13px',
+				fontSize: '14px',
 				color: '#000',
         		}
 		},
 		subtitle: {
-			text: 'Cell voltage(V)',
-			style: {
-				fontFamily: 'Arial, Helvetica, sans-serif',
-				fontWeight: 'normal',
-				fontSize: '12px',
-				color: '#a8a8a8',
-        		}
+			text: ''
 		},
 
-		xAxis: {
-        categories: ['161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192'],
+		/*xAxis: {
+		categories: ['201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','223','224'],
+		 max: 23,   // ทำให้กราฟคิดว่ายังมี 40 ช่อง
 			labels: {
            		 rotation: -90,
 			 style: {
@@ -728,12 +562,27 @@ $(document).ready(function() {
 				color: '#000',
         		}
         		}
-		},
+		},*/
+		xAxis: {
+		categories: ['201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','223','224','225','226','227','228','229','230','231','232','233','234','235','236','237','238','239','240'],
+    max: 39,
+    labels: {
+        rotation: -90,
+        formatter: function () {
+            return this.value ? this.value : ''; // 🔥 ซ่อนค่า 24–39
+        },
+       style: {
+				fontFamily: 'Arial, Helvetica, sans-serif',
+				fontWeight: 'normal',
+				fontSize: '10px',
+				color: '#000',
+        		}
+    }
+},
 		yAxis: [{
 			//max: 800,	
 			min: 0,
 			max: 4,
-			//max: 5,
 			tickInterval:1,
 			lineWidth: 1,
 			gridLineWidth: 1,
@@ -798,13 +647,13 @@ $(document).ready(function() {
 			series: [{
 			type: 'column',
 			name: 'Voltage',
-			data: [{y: S1_V1, color: Color1},{y: S1_V2, color: Color2},{y: S1_V3, color: Color3},{y: S1_V4, color: Color4},{y: S1_V5, color: Color5},{y: S1_V6, color: Color6},{y: S1_V7, color: Color7},{y: S1_V8, color: Color8},{y: S1_V9, color: Color9},{y: S1_V10, color: Color10},{y: S1_V11, color: Color11},{y: S1_V12, color: Color12},{y: S1_V13, color: Color13},{y: S1_V14, color: Color14},{y: S1_V15, color: Color15},{y: S1_V16, color: Color16},{y: S1_V17, color: Color17},{y: S1_V18, color: Color18},{y: S1_V19, color: Color19},{y: S1_V20, color: Color20},{y: S1_V21, color: Color21},{y: S1_V22, color: Color22},{y: S1_V23, color: Color23},{y: S1_V24, color: Color24},{y: S1_V25, color: Color25},{y: S1_V26, color: Color26},{y: S1_V27, color: Color27},{y: S1_V28, color: Color28},{y: S1_V29, color: Color29},{y: S1_V30, color: Color30},{y: S1_V31, color: Color31},{y: S1_V32, color: Color32}]
+			data: [{y: S1_V1, color: Color1},{y: S1_V2, color: Color2},{y: S1_V3, color: Color3},{y: S1_V4, color: Color4},{y: S1_V5, color: Color5},{y: S1_V6, color: Color6},{y: S1_V7, color: Color7},{y: S1_V8, color: Color8},{y: S1_V9, color: Color9},{y: S1_V10, color: Color10},{y: S1_V11, color: Color11},{y: S1_V12, color: Color12},{y: S1_V13, color: Color13},{y: S1_V14, color: Color14},{y: S1_V15, color: Color15},{y: S1_V16, color: Color16},{y: S1_V17, color: Color17},{y: S1_V18, color: Color18},{y: S1_V19, color: Color19},{y: S1_V20, color: Color20},{y: S1_V21, color: Color21},{y: S1_V22, color: Color22},{y: S1_V23, color: Color23},{y: S1_V24, color: Color24}]
 		},
 		{
 			type: 'line',
 			color: '#FFFF00',
 			name: 'Avg Voltage',
-			data: [{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG}]
+			data: [{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y:AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG},{y: AVG}]
 		}
 		]
 	});
@@ -816,75 +665,59 @@ $('#update').click(function() {
 	   var vv2=currentdate.getDate();
 //alert("22");
 
-				xmlDoc1=loadXMLDoc("../xml2/Main.xml");
+				xmlDoc1=loadXMLDoc("../xml/Battery.xml");
 				var AVG1=new Number();
 				var AVG1=Number(xmlDoc1.getElementsByTagName("HVB1_Avg_cV")[0].childNodes[0].nodeValue);
 				var S1_I1=new Number();
 				var S1_I1=Number(xmlDoc1.getElementsByTagName("HVB1_Batt_I")[0].childNodes[0].nodeValue);
 				var S_1_V1=new Number();
-				var S_1_V1=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV1")[0].childNodes[0].nodeValue);	
+				var S_1_V1=Number(xmlDoc1.getElementsByTagName("HVB1_Batt13_cV9")[0].childNodes[0].nodeValue);	
 				var S_1_V2=new Number();
-				var S_1_V2=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV2")[0].childNodes[0].nodeValue);
+				var S_1_V2=Number(xmlDoc1.getElementsByTagName("HVB1_Batt13_cV10")[0].childNodes[0].nodeValue);
 				var S_1_V3=new Number();
-				var S_1_V3=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV3")[0].childNodes[0].nodeValue);
+				var S_1_V3=Number(xmlDoc1.getElementsByTagName("HVB1_Batt13_cV11")[0].childNodes[0].nodeValue);
 				var S_1_V4=new Number();
-				var S_1_V4=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV4")[0].childNodes[0].nodeValue);
+				var S_1_V4=Number(xmlDoc1.getElementsByTagName("HVB1_Batt13_cV12")[0].childNodes[0].nodeValue);
 				var S_1_V5=new Number();
-				var S_1_V5=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV5")[0].childNodes[0].nodeValue);
+				var S_1_V5=Number(xmlDoc1.getElementsByTagName("HVB1_Batt13_cV13")[0].childNodes[0].nodeValue);
 				var S_1_V6=new Number();
-				var S_1_V6=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV6")[0].childNodes[0].nodeValue);
+				var S_1_V6=Number(xmlDoc1.getElementsByTagName("HVB1_Batt13_cV14")[0].childNodes[0].nodeValue);
 				var S_1_V7=new Number();
-				var S_1_V7=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV7")[0].childNodes[0].nodeValue);
+				var S_1_V7=Number(xmlDoc1.getElementsByTagName("HVB1_Batt13_cV15")[0].childNodes[0].nodeValue);
 				var S_1_V8=new Number();
-				var S_1_V8=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV8")[0].childNodes[0].nodeValue);
+				var S_1_V8=Number(xmlDoc1.getElementsByTagName("HVB1_Batt13_cV16")[0].childNodes[0].nodeValue);
 				var S_1_V9=new Number();
-				var S_1_V9=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV9")[0].childNodes[0].nodeValue);	
+				var S_1_V9=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV1")[0].childNodes[0].nodeValue);	
 				var S_1_V10=new Number();
-				var S_1_V10=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV10")[0].childNodes[0].nodeValue);
+				var S_1_V10=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV2")[0].childNodes[0].nodeValue);
 				var S_1_V11=new Number();
-				var S_1_V11=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV11")[0].childNodes[0].nodeValue);
+				var S_1_V11=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV3")[0].childNodes[0].nodeValue);
 				var S_1_V12=new Number();
-				var S_1_V12=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV12")[0].childNodes[0].nodeValue);
+				var S_1_V12=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV4")[0].childNodes[0].nodeValue);
 				var S_1_V13=new Number();
-				var S_1_V13=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV13")[0].childNodes[0].nodeValue);
+				var S_1_V13=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV5")[0].childNodes[0].nodeValue);
 				var S_1_V14=new Number();
-				var S_1_V14=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV14")[0].childNodes[0].nodeValue);
+				var S_1_V14=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV6")[0].childNodes[0].nodeValue);
 				var S_1_V15=new Number();
-				var S_1_V15=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV15")[0].childNodes[0].nodeValue);
+				var S_1_V15=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV7")[0].childNodes[0].nodeValue);
 				var S_1_V16=new Number();
-				var S_1_V16=Number(xmlDoc1.getElementsByTagName("HVB1_Batt11_cV16")[0].childNodes[0].nodeValue);	
+				var S_1_V16=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV8")[0].childNodes[0].nodeValue);	
 				var S_1_V17=new Number();
-				var S_1_V17=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV1")[0].childNodes[0].nodeValue);
+				var S_1_V17=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV9")[0].childNodes[0].nodeValue);
 				var S_1_V18=new Number();
-				var S_1_V18=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV2")[0].childNodes[0].nodeValue);	
+				var S_1_V18=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV10")[0].childNodes[0].nodeValue);	
 				var S_1_V19=new Number();
-				var S_1_V19=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV3")[0].childNodes[0].nodeValue);
+				var S_1_V19=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV11")[0].childNodes[0].nodeValue);
 				var S_1_V20=new Number();
-				var S_1_V20=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV4")[0].childNodes[0].nodeValue);
+				var S_1_V20=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV12")[0].childNodes[0].nodeValue);
 				var S_1_V21=new Number();
-				var S_1_V21=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV5")[0].childNodes[0].nodeValue);
+				var S_1_V21=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV13")[0].childNodes[0].nodeValue);
 				var S_1_V22=new Number();
-				var S_1_V22=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV6")[0].childNodes[0].nodeValue);
+				var S_1_V22=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV14")[0].childNodes[0].nodeValue);
 				var S_1_V23=new Number();
-				var S_1_V23=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV7")[0].childNodes[0].nodeValue);
+				var S_1_V23=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV15")[0].childNodes[0].nodeValue);
 				var S_1_V24=new Number();
-				var S_1_V24=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV8")[0].childNodes[0].nodeValue);
-				var S_1_V25=new Number();
-				var S_1_V25=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV9")[0].childNodes[0].nodeValue);
-				var S_1_V26=new Number();
-				var S_1_V26=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV10")[0].childNodes[0].nodeValue);
-				var S_1_V27=new Number();
-				var S_1_V27=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV11")[0].childNodes[0].nodeValue);
-				var S_1_V28=new Number();
-				var S_1_V28=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV12")[0].childNodes[0].nodeValue);
-				var S_1_V29=new Number();
-				var S_1_V29=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV13")[0].childNodes[0].nodeValue);
-				var S_1_V30=new Number();
-				var S_1_V30=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV14")[0].childNodes[0].nodeValue);
-				var S_1_V31=new Number();
-				var S_1_V31=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV15")[0].childNodes[0].nodeValue);
-				var S_1_V32=new Number();
-				var S_1_V32=Number(xmlDoc1.getElementsByTagName("HVB1_Batt12_cV16")[0].childNodes[0].nodeValue);
+				var S_1_V24=Number(xmlDoc1.getElementsByTagName("HVB1_Batt14_cV16")[0].childNodes[0].nodeValue);
 				var Color1=new String();
 				//alert(S1_V1);
 if(S1_I>0){
@@ -1006,48 +839,8 @@ if(S1_I>0){
 				if(S_1_V24<(AVG1+0.06)){var Color_24='#92d050';
 				}else if((S_1_V24>=(AVG1+0.06)) &&(S_1_V24<=(AVG1+0.08))){var Color_24='#fed866';
 				}else if(S_1_V24>(AVG1+0.08)){var Color_24='#f49471';
-				}else{var Color_24='#92d050';}	
-				var Color_25=new String();
-				 if(S_1_V25<(AVG1+0.06)){var Color_25='#92d050';
-				}else if((S_1_V25>=(AVG1+0.06)) &&(S_1_V25<=(AVG1+0.08))){var Color_25='#fed866';
-				}else if(S_1_V25>(AVG1+0.08)){var Color_25='#f49471';
-				}else{var Color_25='#92d050';}	
-				var Color_26=new String();
-				 if(S_1_V26<(AVG1+0.06)){var Color_26='#92d050';
-				}else if((S_1_V27>=(AVG1+0.06)) &&(S_1_V26<=(AVG1+0.08))){var Color_26='#fed866';
-				}else if(S_1_V26>(AVG1+0.08)){var Color_26='#f49471';
-				}else{var Color_26='#92d050';}	
-				var Color_27=new String();
-				 if(S_1_V27<(AVG1+0.06)){var Color_27='#92d050';
-				}else if((S_1_V27>=(AVG1+0.06)) &&(S_1_V27<=(AVG1+0.08))){var Color_27='#fed866';
-				}else if(S_1_V27>(AVG1+0.08)){var Color_27='#f49471';
-				}else{var Color_27='#92d050';}	
-				var Color_28=new String();
-				if(S_1_V28<(AVG1+0.06)){var Color_28='#92d050';
-				}else if((S_1_V28>=(AVG1+0.06)) &&(S_1_V28<=(AVG1+0.08))){var Color_28='#fed866';
-				}else if(S_1_V28>(AVG1+0.08)){var Color_28='#f49471';
-				}else{var Color_28='#92d050';}	
-				var Color_29=new String();
-				 if(S_1_V29<(AVG1+0.06)){var Color_29='#92d050';
-				}else if((S_1_V29>=(AVG1+0.06)) &&(S_1_V29<=(AVG1+0.08))){var Color_29='#fed866';
-				}else if(S_1_V29>(AVG1+0.08)){var Color_29='#f49471';
-				}else{var Color_29='#92d050';}	
-				var Color_30=new String();
-				 if(S_1_V30<(AVG1+0.06)){var Color_30='#92d050';
-				}else if((S_1_V30>=(AVG1+0.06)) &&(S_1_V30<=(AVG1+0.08))){var Color_30='#fed866';
-				}else if(S_1_V30>(AVG1+0.08)){var Color_30='#f49471';
-				}else{var Color_30='#92d050';}	
-				var Color_31=new String();
-				 if(S_1_V31<(AVG1+0.06)){var Color_31='#92d050';
-				}else if((S_1_V31>=(AVG1+0.06)) &&(S_1_3V1<=(AVG1+0.08))){var Color_1='#fed866';
-				}else if(S_1_V31>(AVG1+0.08)){var Color_31='#f49471';
-				}else{var Color_31='#92d050';}//-	
-				var Color_32=new String();
-				 if(S_1_V32<(AVG1+0.06)){var Color_32='#92d050';
-				}else if((S_1_V32>=(AVG1+0.06)) &&(S_1_V32<=(AVG1+0.08))){var Color_32='#fed866';
-				}else if(S_1_V32>(AVG1+0.08)){var Color_32='#f49471';
-				}else{var Color_32='#92d050';}
-						
+				}else{var Color_24='#92d050';}
+		
 }else{
 	 if(S_1_V1>(AVG1-0.30)){
 		var Color_1='#92d050';//green
@@ -1239,72 +1032,8 @@ if(S1_I>0){
 		var Color_24='#fed866';
 	}else if(S_1_V24<(AVG1-0.35)){
 		var Color_24='#f49471';
-	}	
-	var Color_25=new String();
-	 if(S_1_V25>(AVG1-0.30)){
-		var Color_25='#92d050';
-	}else if((S_1_V25<=(AVG1-0.30)) &&(S_1_V25>=(AVG1-0.35))){
-		var Color_25='#fed866';
-	}else if(S_1_V25<(AVG1-0.35)){
-		var Color_25='#f49471';
-	}	
-	var Color_26=new String();
-	 if(S_1_V26>(AVG1-0.30)){
-		var Color_26='#92d050';
-	}else if((S_1_V26<=(AVG1-0.30)) &&(S_1_V26>=(AVG1-0.35))){
-		var Color_26='#fed866';
-	}else if(S_1_V26<(AVG1-0.35)){
-		var Color_26='#f49471';
-	}	
-	var Color_=new String();
-	 if(S_1_V27>(AVG1-0.30)){
-		var Color_27='#92d050';
-	}else if((S_1_V27<=(AVG1-0.30)) &&(S_1_V27>=(AVG1-0.35))){
-		var Color_27='#fed866';
-	}else if(S_1_V27<(AVG1-0.35)){
-		var Color_27='#f49471';
-	}	
-	var Color_28=new String();
-	 if(S_1_V28>(AVG1-0.30)){
-		var Color_28='#92d050';
-	}else if((S_1_V28<=(AVG1-0.30)) &&(S_1_V28>=(AVG1-0.35))){
-		var Color_28='#fed866';
-	}else if(S_1_V28<(AVG1-0.35)){
-		var Color_28='#f49471';
-	}	
-	var Color_29=new String();
-	 if(S_1_V29>(AVG1-0.30)){
-		var Color_29='#92d050';
-	}else if((S_1_V29<=(AVG1-0.30)) &&(S_1_V29>=(AVG1-0.35))){
-		var Color_29='#fed866';
-	}else if(S_1_V29<(AVG1-0.35)){
-		var Color_29='#f49471';
-	}	
-	var Color_30=new String();
-	 if(S_1_V30>(AVG1-0.30)){
-		var Color_30='#92d050';
-	}else if((S_1_V30<=(AVG1-0.30)) &&(S_1_V30>=(AVG1-0.35))){
-		var Color_30='#fed866';
-	}else if(S_1_V30<(AVG1-0.35)){
-		var Color_30='#f49471';
-	}	
-	var Color_31=new String();
-	 if(S_1_V31>(AVG1-0.30)){
-		var Color_31='#92d050';
-	}else if((S_1_V31<=(AVG1-0.30)) &&(S_1_V31>=(AVG1-0.35))){
-		var Color_31='#fed866';
-	}else if(S_1_V31<(AVG1-0.35)){
-		var Color_31='#f49471';
-	}//-	
-	var Color_32=new String();
-	 if(S_1_V32>(AVG1-0.30)){
-		var Color_32='#92d050';
-	}else if((S_1_V32<=(AVG1-0.30)) &&(S_1_V32>=(AVG1-0.35))){
-		var Color_32='#fed866';
-	}else if(S_1_V32<(AVG1-0.35)){
-		var Color_32='#f49471';
-	}//-	
-	
+	}
+
 }
 ////-----------------------------------	
 				//alert(S1_V1);
@@ -1331,15 +1060,7 @@ if(S1_I>0){
 				chart.series[0].data[20].update({y: S_1_V21, color: Color_21});
 				chart.series[0].data[21].update({y: S_1_V22, color: Color_22});
 				chart.series[0].data[22].update({y: S_1_V23, color: Color_23});
-				chart.series[0].data[23].update({y: S_1_V24, color: Color_24});
-				chart.series[0].data[24].update({y: S_1_V25, color: Color_25});
-				chart.series[0].data[25].update({y: S_1_V26, color: Color_26});
-				chart.series[0].data[26].update({y: S_1_V27, color: Color_27});
-				chart.series[0].data[27].update({y: S_1_V28, color: Color_28});
-				chart.series[0].data[28].update({y: S_1_V29, color: Color_29});
-				chart.series[0].data[29].update({y: S_1_V30, color: Color_30});
-				chart.series[0].data[30].update({y: S_1_V31, color: Color_31});
-				chart.series[0].data[31].update({y: S_1_V32, color: Color_32});					
+				chart.series[0].data[23].update({y: S_1_V24, color: Color_24});	
 	});
 });
 

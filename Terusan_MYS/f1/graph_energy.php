@@ -1,10 +1,13 @@
+<?php
+$suffix = ".php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Energy Reports — Terusan MOC</title>
+<title>Energy Reports - Jambongan MOC</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
@@ -28,7 +31,7 @@ html,body{margin:0;padding:0;height:100%;font-family:'DM Sans',system-ui,sans-se
 .tab-btn .ico svg{width:100%;height:100%}
 
 .frame-wrap{
-  width:100%;height:calc(100vh - 50px);  /* tab-bar approx 50px */
+  width:100%;height:calc(100vh - 50px);
   background:#f5f5f0;
   overflow:hidden;
 }
@@ -46,18 +49,18 @@ html,body{margin:0;padding:0;height:100%;font-family:'DM Sans',system-ui,sans-se
 <body>
 
 <nav class="tab-bar" id="tabbar">
-  <button class="tab-btn active" data-src="graph/monthly.php">
+  <button class="tab-btn active" data-src="graph/monthly<?php echo $suffix; ?>">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
     Monthly (daily bars)
   </button>
-  <button class="tab-btn" data-src="graph/yearly.php">
+  <button class="tab-btn" data-src="graph/yearly<?php echo $suffix; ?>">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
     Yearly (monthly bars)
   </button>
 </nav>
 
 <div class="frame-wrap">
-  <iframe id="energy-frame" src="graph/monthly.php"></iframe>
+  <iframe id="energy-frame" src="graph/monthly<?php echo $suffix; ?>"></iframe>
 </div>
 
 <script>

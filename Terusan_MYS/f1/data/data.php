@@ -1,136 +1,278 @@
 <?php
 if($_POST==null){
-	$y1=date('Y'); $m=date('m'); $d=date('d');
+	$y1=date('Y');
+	$m=date('m');
+	$d=date('d');
+	$table="";
 }else{
-	$y1=$_POST["y"]; $m=$_POST["m"]; $d=$_POST["d"];
+	$y1=$_POST["y"];
+	$m=$_POST["m"];
+	$d=$_POST["d"];
+	$table=$_POST["txt_table"];
+} 
+$nd=0;
+switch ($m){
+	case "01":
+		$m1="Jan";
+		$nd=31;
+	break;
+	case "02":
+		$m1="Feb";
+		if(($y1%4)==0){$nd=29;}else{$nd=28;}
+	break;
+	case "03":
+		$m1="Mar";
+		$nd=31;
+	break;
+	case "04":
+		$m1="Apr";
+		$nd=30;
+	break;
+	case "05":
+		$m1="May";
+		$nd=31;
+	break;
+	case "06":
+		$m1="Jun";
+		$nd=30;
+	break;
+	case "07":
+		$m1="Jul";
+		$nd=31;
+	break;
+	case "08":
+		$m1="Aug";
+		$nd=31;
+	break;
+	case "09":
+		$m1="Sep";
+		$nd=30;
+	break;
+	case "10":
+		$m1="Oct";
+		$nd=31;
+	break;
+	case "11":
+		$m1="Nov";
+		$nd=30;
+	break;
+	case "12":
+		$m1="Dec";
+		$nd=31;
+	break;
 }
-$months=array('01'=>'Jan','02'=>'Feb','03'=>'Mar','04'=>'Apr','05'=>'May','06'=>'Jun','07'=>'Jul','08'=>'Aug','09'=>'Sep','10'=>'Oct','11'=>'Nov','12'=>'Dec');
-$m1=isset($months[$m])?$months[$m]:$m;
 $yy1=date('Y');
 ?>
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reports — Leonics MOC</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f5f5f0;--card:#fff;--panel:#fafaf7;--border:#e8e6df;--text:#1a1a1a;--sub:#888;--radius:12px;--font:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:13px;line-height:1.5;padding:20px;min-height:100vh}
-.page{max-width:860px;margin:0 auto}
+<link href="../boilerplate.css" rel="stylesheet" type="text/css">
+<link href="../css/log.css" rel="stylesheet" type="text/css">
+<style type="text/css"> 
+	input[type=text] , select {
+	    width: 90%;
+	    border: 1px solid #22869f;
+	    padding: 3px 3px;
+	    margin: 2px 0;
+	    box-sizing: border-box;
+	    border-radius: 3px;
+	    background-color:#c6effa;
+	}
+	input[type=submit] {
+	  width: 70px;
+	  background-color: #0984b2;
+	  color: white;
+	  text-align:center;
+	  padding: 4px 4px;
+	  margin: 2px 0;
+	  border: none;
+	  border-radius: 2px;
+	  cursor: pointer;
+	}
+	input[type=submit]:hover { background-color: #0ba2da;}
+	.style1 {font-family:Arial, Helvetica, sans-serif ;  letter-spacing: 0.01em;  font-size:0.6em;  font-weight: bold;color: #000000;font-weight: normal;}
 
-h1{font-size:22px;font-weight:700;margin-bottom:4px}
-.subtitle{font-size:13px;color:var(--sub);margin-bottom:24px}
-
-/* Select card */
-.sel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px}
-.sel-title{font-size:14px;font-weight:600;margin-bottom:14px}
-.sel-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
-.sel-group label{display:block;font-size:11px;font-weight:500;color:var(--sub);text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
-.sel-group select{font-family:var(--font);font-size:13px;padding:9px 14px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);min-width:100px;cursor:pointer;appearance:auto}
-.sel-group select:focus{outline:none;border-color:#999}
-
-/* Report cards grid */
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-
-.report-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;transition:box-shadow .15s}
-.report-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.rc-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
-.rc-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.rc-info{flex:1}
-.rc-title{font-size:14px;font-weight:600;margin-bottom:2px}
-.rc-desc{font-size:12px;color:var(--sub);line-height:1.4}
-.rc-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px 0;border:none;border-radius:8px;font-family:var(--font);font-size:13px;font-weight:600;cursor:pointer;background:var(--text);color:#fff;transition:background .15s;margin-top:auto}
-.rc-btn:hover{background:#333}
-.rc-btn svg{width:16px;height:16px}
-
-@media(max-width:600px){.grid{grid-template-columns:1fr}.sel-row{flex-direction:column;align-items:stretch}body{padding:12px}}
+@media only screen and (min-width: 700px) {
+	input[type=text] , select {
+	    width: 90%;
+	    border: 1px solid #22869f;
+	    padding: 7px 7px;
+	    margin: 4px 0;
+	    box-sizing: border-box;
+	    border-radius: 3px;
+	    background-color:#c6effa;
+	}
+	input[type=submit] {
+	  width: 70px;
+	  background-color: #0984b2;
+	  color: white;
+	  text-align:center;
+	  padding: 9px 9px;
+	  margin: 4px 0;
+	  border: none;
+	  border-radius: 2px;
+	  cursor: pointer;
+	}
+	input[type=submit]:hover { background-color: #0ba2da;}
+	.style1 {font-family:Arial, Helvetica, sans-serif ;  letter-spacing: 0.01em;  font-size:1.05em;  font-weight: bold;color: #000000;font-weight: normal;}
+}
 </style>
-</head>
-<body>
-<div class="page">
 
-  <h1>Reports</h1>
-  <div class="subtitle">Export data as CSV (open in Excel)</div>
-
-  <!-- Select site & range -->
-  <div class="sel-card">
-    <div class="sel-title">Select date range</div>
-    <div class="sel-row">
-      <div class="sel-group">
-        <label>Day</label>
-        <select id="sel_d">
-          <?php for($i=1;$i<=31;$i++){echo '<option value="'.str_pad($i,2,'0',STR_PAD_LEFT).'"'.($i==$d?' selected':'').'>'.$i.'</option>';}?>
-        </select>
-      </div>
-      <div class="sel-group">
-        <label>Month</label>
-        <select id="sel_m">
-          <?php foreach($months as $k=>$v){echo '<option value="'.$k.'"'.($k==$m?' selected':'').'>'.$v.'</option>';}?>
-        </select>
-      </div>
-      <div class="sel-group">
-        <label>Year</label>
-        <select id="sel_y">
-          <?php for($i=2020;$i<=$yy1;$i++){echo '<option value="'.$i.'"'.($i==$y1?' selected':'').'>'.$i.'</option>';}?>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <!-- Report cards -->
-  <div class="grid">
-
-    <!-- Real-time data (Main) -->
-    <div class="report-card">
-      <div class="rc-header">
-        <div class="rc-icon" style="background:#eff6ff;color:#3b82f6">📊</div>
-        <div class="rc-info">
-          <div class="rc-title">Real-time data</div>
-          <div class="rc-desc">All sensor readings per minute — BDI, SCC, PM, Gen, Weather for selected day</div>
-        </div>
-      </div>
-      <button class="rc-btn" onclick="dl('Main')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download CSV
-      </button>
-    </div>
-
-    <!-- Energy log -->
-    <div class="report-card">
-      <div class="rc-header">
-        <div class="rc-icon" style="background:#fef3c7;color:#f59e0b">⚡</div>
-        <div class="rc-info">
-          <div class="rc-title">Energy log</div>
-          <div class="rc-desc">Daily energy summary (kWh) — Solar, Gen, Load, Battery for selected month</div>
-        </div>
-      </div>
-      <button class="rc-btn" onclick="dl('Energylog')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download CSV
-      </button>
-    </div>
-
-  </div>
-
-</div>
-
-<iframe id="dlFrame" style="display:none"></iframe>
+<title>data</title>
 <script>
-function dl(table){
-  const y=document.getElementById('sel_y').value;
-  const m=document.getElementById('sel_m').value;
-  const d=document.getElementById('sel_d').value;
-  let url;
-  if(table==='Main'){
-    url='Download/dlrecord_data.php?y='+y+'&m='+m+'&d='+d;
-  }else{
-    url='Download/dlrecord_log.php?y='+y+'&m='+m;
-  }
-  document.getElementById('dlFrame').src=url;
+function myFunction() {
+    setTimeout(function () {
+        window.history.back();
+    }, 500);
 }
 </script>
+</head>
+<body>
+<div id="head">
+<form id="form1" name="form1" method="POST" action="data.php">
+<table width="100%" border="0">
+  <tr>
+    <td colspan="5" class="style1"><strong>Select Historical Data table to download</strong></td>
+  </tr>
+  <tr>
+    <td  class="style1" align="left">&nbsp;&nbsp;Table</td>
+    <td  class="style1" align="left"><div id="day_txt">&nbsp;&nbsp;Day</div></td>
+    <td  class="style1" align="left">&nbsp;&nbsp;Month</td>
+    <td  class="style1" align="left">&nbsp;&nbsp;Year</td>
+    <td  class="style1" align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="style1" >
+      <select name="txt_table" id="txt_table"  onchange="myFunction();">
+        <option value="Main">Main</option>
+        <option value="Battery1">String1 Battery</option>
+        <option value="Battery2">String2 Battery</option>
+        <option value="Energylog">Energylog</option>
+      </select>
+    </td>
+    <script>
+function myFunction() {
+  var x = document.getElementById("txt_table").value;
+  if(x=="Energylog"){
+ 	 document.getElementById("txt_day").style.display = "none";
+ 	 document.getElementById("day_txt").style.display  = "none";
+  }else{
+  	 document.getElementById("txt_day").style.display  = "block";
+ 	 document.getElementById("day_txt").style.display  = "block";
+  }
+}
+</script>
+    <!--td class="style1" align="left">
+  	<div id="txt_day">
+        	<select name="d" id="d" >
+                <option value="<--?php print $d; ?>"><--?php print $d; ?></option>
+                <--?php for($i=1;$i<=$nd;$i++){?>
+                <option value="<--?php print $i;?>"><--?php print $i;?></option>
+                <--?php }?>
+              </select>
+        </div>
+    </td-->
+    <td class="style1" align="left">
+  	<div id="txt_day">
+        	<select name="d" id="d" > 
+        	<option value="<?php print $d; ?>"><?php print $d; ?></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+        </div>
+    </td>
+    <td class="style1" align="left">
+      <select name="m" id="m" >
+        <option value="<?php print $m; ?>"><?php print $m1; ?></option>
+        <option value="01">Jan</option>
+        <option value="02">Feb</option>
+        <option value="03">Mar</option>
+        <option value="04">Apr</option>
+        <option value="05">May</option>
+        <option value="06">Jun</option>
+        <option value="07">Jul</option>
+        <option value="08">Aug</option>
+        <option value="09">Sep</option>
+        <option value="10">Oct</option>
+        <option value="11">Nov</option>
+        <option value="12">Dec</option>
+      </select>
+    </td>
+    
+     <td class="style1" align="left">
+      <select name="y" id="y" >
+        <option value="<?php print $y1; ?>"><?php print $y1; ?></option>
+        <?php for($i=2026;$i<=$yy1;$i++){?>
+        <option value="<?php print $i;?>"><?php print $i;?></option>
+        <?php }?>
+      </select></td>
+    <td class="style1" align="left">
+      <input type="submit" name="button" id="button" value="Submit" />
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+<div id="data">
+ <?php
+ switch ($table) {
+	case "Main":
+ ?>      
+  <iframe   src="Download/dlrecord_data.php?y=<?php print $y1;?>&m=<?php print $m;?>&d=<?php print $d;?>" scrolling="no" frameborder="0"></iframe>
+  <?php	
+    break;
+	case "Battery1":
+  ?>
+  <iframe   src="Download/dlrecord_battery1.php?y=<?php print $y1;?>&m=<?php print $m;?>&d=<?php print $d;?>"  scrolling="no" frameborder="0"></iframe>
+  <?php	
+    break;
+	case "Battery2":
+  ?>
+  <iframe   src="Download/dlrecord_battery2.php?y=<?php print $y1;?>&m=<?php print $m;?>&d=<?php print $d;?>"  scrolling="no" frameborder="0"></iframe>
+  <?php	
+    break;
+	case "Energylog":
+  ?>
+  <iframe   src="Download/dlrecord_log.php?y=<?php print $y1;?>&m=<?php print $m;?>" scrolling="no" frameborder="0"></iframe>  <?php	
+    break;
+     default:
+  ?>
+
+  <iframe   src=""  scrolling="no" frameborder="0"></iframe>
+  <?php     
+     break;
+}
+  ?>
+</div>
 </body>
 </html>
